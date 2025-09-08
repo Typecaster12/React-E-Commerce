@@ -23,7 +23,7 @@ const Home = () => {
   // This will only recalculate when data or searchQuery changes
   const filteredProducts = useMemo(() => {
     // If no data yet, return empty array
-    if (!data) return [];
+    if(!data) return []; //khtm;
     
     // If no search query, return all products
     if (!searchQuery || searchQuery.trim() === '') {
@@ -39,10 +39,19 @@ const Home = () => {
   if(isPending) return <div className="loading">Loading...</div>
   if(isError) return <div className="error">Some Error Occurred</div>
   
-  console.log('All products:', data);
-  console.log('Search query:', searchQuery);
-  console.log('Filtered products:', filteredProducts);
+  // console.log('All products:', data);
+  // console.log('Search query:', searchQuery);
+  // console.log('Filtered products:', filteredProducts);
 
+
+  //function to get product id;
+  const getProductId = (id) => {
+    console.log(id);
+    return;
+  }
+
+
+  
   return (
     <div className="main-home-container">
       {/* Step 14: Show search results information */}
@@ -69,7 +78,7 @@ const Home = () => {
                   alt={product.title}
                   className="product-image"
                 />
-                <button className="add-to-cart-btn">
+                <button className="add-to-cart-btn" onClick={() => getProductId(product.id)}>
                   Add to Cart
                 </button>
               </div>
@@ -92,6 +101,3 @@ const Home = () => {
 }
 
 export default Home;
-
-
- 

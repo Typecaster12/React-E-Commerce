@@ -1,0 +1,37 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "category": "Shipping & Delivery",
+      "question": "How long does shipping take?",
+      "answer": "We offer multiple shipping options to meet your needs:\n\n• Standard shipping: 5-7 business days (Free on orders over $50)\n• Express shipping: 2-3 business days ($9.99)\n• Next-day delivery: 1 business day ($19.99, available in select areas)\n\nAll orders are processed within 24 hours on business days. You'll receive a tracking number via email once your order ships.",
+      "isOpen": false
+    },
+    {
+      "id": 2,
+      "category": "Returns & Exchanges",
+      "question": "What is your return policy?",
+      "answer": "We want you to be completely satisfied with your purchase! Here's our return policy:\n\n• 30-day return window from delivery date\n• Items must be unused and in original packaging\n• Free returns for defective or wrong items\n• Return shipping costs $5.99 for size/color exchanges\n• Refunds processed within 3-5 business days after we receive your return\n\nSimply contact our support team or use our easy online return portal to get started.",
+      "isOpen": false
+    },
+    {
+      "id": 3,
+      "category": "Payment & Security",
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major payment methods for your convenience:\n\n• Credit Cards: Visa, Mastercard, American Express, Discover\n• Digital Wallets: PayPal, Apple Pay, Google Pay\n• Buy Now, Pay Later: Klarna, Afterpay (for orders over $35)\n• Gift Cards: Shop This gift cards and store credit\n\nAll transactions are secured with 256-bit SSL encryption to protect your personal and payment information.",
+      "isOpen": false
+    },
+    {
+      "id": 4,
+      "category": "Order Tracking & Support",
+      "question": "How can I track my order?",
+      "answer": "Tracking your order is easy! Here are three ways:\n\n• Email: Check your confirmation email for the tracking link\n• Account Dashboard: Log into your account and view 'My Orders'\n• Text Updates: Reply 'TRACK' to our SMS notifications\n\nYour tracking number becomes active within 24 hours of shipping. If you can't find your tracking information, contact our support team at support@shopthis.com or call 1-800-SHOP-NOW.",
+      "isOpen": false
+    }
+  ],
+  "contactInfo": {
+    "email": "support@shopthis.com",
+    "phone": "1-800-SHOP-NOW",
+    "hours": "Monday - Friday: 9AM - 8PM EST\nSaturday - Sunday: 10AM - 6PM EST"
+  }
+}
