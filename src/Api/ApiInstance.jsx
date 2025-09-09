@@ -6,9 +6,20 @@ const Api = axios.create({
 });
 
 //get request for product lists;
-export const getProductDetails = async() => {
+export const getProductDetails = async () => {
     const response = await Api.get('/products');
     return response.data;
 }
 
+//fetching for dynamic route(individual product detail);
+export const getIndvProduct = async (id) => {
+    const response = await Api.get(`/products/${id}`);
+    // console.log(response.data);
+    return response.data;
+}
+
+
+
 // key = /products
+//for dynamic routing;
+// https://fakestoreapi.com/products/3 //3 == id

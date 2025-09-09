@@ -6,6 +6,7 @@ import AppLayout from "../src/Layout/AppLayout";
 import './App.css';
 import FAQ from "./Components/FAQ";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ProductDetail from "./Pages/ProductDetail";
 //route layout;
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/:id",
+        element: <ProductDetail />, //dynamic route;
       },
       {
         path: "/about",
