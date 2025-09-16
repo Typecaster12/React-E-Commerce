@@ -3,20 +3,23 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 // Step 4: Import SearchProvider to wrap the layout
 import { SearchProvider } from "../Context/SearchContext";
+import { CartProvider } from "../Context/CartContext";
 
 const AppLayout = () => {
     return (
         // Step 5: Wrap the entire layout with SearchProvider
         // This makes search functionality available to all child components (Navbar, Home, etc.)
-        <SearchProvider>
-            <div className="app-layout">
-                <Navbar />
-                <main className="main-content">
-                    <Outlet />
-                </main>
-                <Footer />
-            </div>
-        </SearchProvider>
+        <CartProvider>
+            <SearchProvider>
+                <div className="app-layout">
+                    <Navbar />
+                    <main className="main-content">
+                        <Outlet />
+                    </main>
+                    <Footer />
+                </div>
+            </SearchProvider>
+        </CartProvider>
     )
 }
 

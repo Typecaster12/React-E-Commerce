@@ -7,6 +7,7 @@ import './App.css';
 import FAQ from "./Components/FAQ";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ProductDetail from "./Pages/ProductDetail";
+import Cart from "./Components/Cart";
 //route layout;
 const router = createBrowserRouter([
   {
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />
-      }
+      },
+      {
+        path: "/cart",
+        element: <Cart />
+      },
     ]
   }
 ])

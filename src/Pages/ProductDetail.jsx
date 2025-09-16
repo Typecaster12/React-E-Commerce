@@ -1,17 +1,24 @@
-/* eslint-disable no-unused-vars */
 import { useQuery } from "@tanstack/react-query";
 import { getIndvProduct } from "../Api/ApiInstance";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, NavLink } from "react-router-dom";
 import './ProductDetail.css';
 import { useState } from "react";
+import { useCart } from "../Context/CartContext";
 
 const ProductDetail = () => {
+    //addtocart function form context(global state);
+    const { addProductsToCart } = useCart();
+
 
     //state for the quantity indicator;
+    //this state is going to be shared in add to cart
+    //the product we click is also goin to be shared;
+    //the product's id will also be shared;
     const [productNo, setProductNo] = useState(1); //by default one, as we click on the add to cart button,
 
     //to get the id;
     const { id } = useParams();
+    // console.log(`use param's value : ${id}`);
     const navigate = useNavigate();
 
     const { data, isPending, isError } = useQuery({
@@ -29,6 +36,13 @@ const ProductDetail = () => {
 
     // Handle add to cart (placeholder function)
     const handleAddToCart = () => {
+        addProductsToCart({
+            img:data.image,
+            id: data.id,
+            name: data.title,
+            price: (productNo * data.price),
+            quantity: productNo //state, we created
+        })
         alert(`Added ${data.title} to cart!`);
     };
 
@@ -49,7 +63,7 @@ const ProductDetail = () => {
         </div>
     );
 
-    console.log(data);
+    // console.log(data);
 
     return (
         <div className="product-detail-container">
@@ -94,7 +108,9 @@ const ProductDetail = () => {
                     </div>
 
                     <div className="product-price-section">
-                        <span className="product-detail-price">${data.price}</span>
+
+                        <span className="product-detail-price">${productNo * data.price}</span>
+                        {/* <span className="product-detail-price">${data.price}</span> */}
                         <span className="price-label">Free shipping available</span>
                     </div>
 
@@ -103,22 +119,23 @@ const ProductDetail = () => {
                         <p>{data.description}</p>
                     </div>
 
-
+                    {/* the quantity indicator, to ensure the number of product you want to but  */}
                     <div className="quantity-box">
                         <div className="quantity-indicator">
-
-                            {productNo === 1 ? <button className="neg-dis">-</button> : <button className="neg">-</button>}
+                            {productNo === 1 ? <button className="neg-dis">-</button> : <button className="neg" onClick={() => setProductNo(productNo - 1)}>-</button>}
                             <span className="quantity-screen">{productNo}</span>
-                            <button className="pos">+</button>
+                            <button className="pos" onClick={() => setProductNo(productNo + 1)}>+</button>
                         </div>
                     </div>
+
+
                     <div className="product-actions">
-                        <button className="add-to-cart-btn-detail" onClick={handleAddToCart}>
-                            🛒 Add to Cart
-                        </button>
-                        {/* <button className="buy-now-btn">
-                            ⚡ Buy Now
-                        </button> */}
+                        {/* onclicking we will redirected to the cart option, with perticular product and its details and also its info... */}
+                        <NavLink to='/cart' className="add-to-cart-btn-detail">
+                            <button onClick={handleAddToCart}>
+                                🛒 Add to Cart
+                            </button>
+                        </NavLink>
                     </div>
 
                     <div className="product-features">

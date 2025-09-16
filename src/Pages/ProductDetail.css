@@ -194,7 +194,21 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
+
+.add-to-cart-btn-detail button {
+    border: none;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 
 .add-to-cart-btn-detail:hover {
     transform: translateY(-2px);
@@ -283,8 +297,13 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .loading-container p {
@@ -450,4 +469,70 @@
 .buy-now-btn:focus {
     outline: 3px solid #667eea;
     outline-offset: 2px;
+}
+
+
+.quantity-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.quantity-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* space between buttons and number */
+    background: #f8f8f8;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.quantity-indicator button {
+    background-color: #4caf50;
+    /* green */
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.quantity-indicator button:hover {
+    background-color: #45a049;
+}
+
+.quantity-indicator .neg-dis {
+    background-color: #ccc;
+    /* disabled state */
+    cursor: not-allowed;
+}
+
+.quantity-screen {
+    min-width: 32px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+    .quantity-indicator {
+        gap: 6px;
+        padding: 6px 10px;
+    }
+
+    .quantity-indicator button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .quantity-screen {
+        font-size: 0.9rem;
+        min-width: 24px;
+    }
 }
