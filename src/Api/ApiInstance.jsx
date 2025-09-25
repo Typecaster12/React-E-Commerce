@@ -17,9 +17,3 @@ export const getIndvProduct = async (id) => {
     // console.log(response.data);
     return response.data;
 }
-
-
-
-// key = /products
-//for dynamic routing;
-// https://fakestoreapi.com/products/3 //3 == id

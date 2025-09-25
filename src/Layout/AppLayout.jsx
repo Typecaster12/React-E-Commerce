@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 // Step 4: Import SearchProvider to wrap the layout
 import { SearchProvider } from "../Context/SearchContext";
 import { CartProvider } from "../Context/CartContext";
+import ChatBot from "../Components/Chat/ChatBot";
 
 const AppLayout = () => {
     return (
@@ -16,6 +17,9 @@ const AppLayout = () => {
                     <main className="main-content">
                         <Outlet />
                     </main>
+
+                    {/* chatbot  */}
+                    <ChatBot />
                     <Footer />
                 </div>
             </SearchProvider>
